@@ -1,8 +1,11 @@
 import "./SingleCard.css"
 
-export default function SingleCard({ card, handleChoice, flipped }) {
+export default function SingleCard({ card, handleChoice, flipped, dislabled }) {
   const handleClick = () => {
-    handleChoice(card)
+    if (!dislabled) {
+      handleChoice(card)
+    }
+    
   }
   return (
     <div className="card">
